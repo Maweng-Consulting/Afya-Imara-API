@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator")
 
-const { Doctor, Education, Experience } = require("../models/doctors");
+const { Doctor } = require("../models/doctors");
 const User = require("../models/users");
 
 
