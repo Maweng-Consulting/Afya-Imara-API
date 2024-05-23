@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //const connectionString = "mongodb://localhost:27017/afyadb";
-const connectionString = "mongodb+srv://kadabo:1234@nodeexpressprojects.oghfjs8.mongodb.net/afyadb?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://kadabo:1234@nodeexpressprojects.oghfjs8.mongodb.net/DeliveryDB?retryWrites=true&w=majority"
 
 const connect_database = async () => {
   await mongoose

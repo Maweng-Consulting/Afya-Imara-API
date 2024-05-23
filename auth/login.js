@@ -19,7 +19,7 @@ const login = async(req, res) => {
     if(!passwordMatches) return res.status(400).send({ error: "Passwords do not match!!" });
 
     const token = await jwt.sign({ user: { id: user.id, username: user.username, email: user.email, first_name: user.first_name, last_name: user.last_name, role: user.role } }, "1234", { expiresIn: "10h" })
-    res.send(token).status(200)
+    res.send({ message: "Login Successful", token: token }).status(200)
 };
 
 module.exports = {
