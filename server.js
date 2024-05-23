@@ -27,10 +27,12 @@ app.get("/", (req, res) => {
 // Custom Routes
 const authRoutes = require("./routes/auth");
 const doctorRoutes = require("./routes/doctors");
+const experienceRoutes = require("./routes/experience");
 
 // 
 app.use("/api/auth", authRoutes);
 app.use("/api/doctors", doctorRoutes);
+app.use("/api/experiences", experienceRoutes);
 
 // starting the server
 app.listen(PORT, () => {

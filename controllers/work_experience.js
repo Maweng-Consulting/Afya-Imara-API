@@ -24,8 +24,10 @@ const getDoctorExperienceRecord = async(req, res) => {
         return res.status(400).send({ errors: errors.array() })
     }
 
+    const { id } = req.params
+
     try {
-        const experience = await Experience.findById({ "_id": id })
+        const experience = await Experience.findById(id)
         if(!experience) return res.status(404).send({ error: `Experiece record with id: ${id} not found!` })
         return res.send(experience).status(200)
     } catch (error) {
@@ -98,5 +100,7 @@ module.exports = {
     getAllWorkExperiences,
     getDoctorExperiences,
     getDoctorExperienceRecord,
-    createExperienceRecord
+    createExperienceRecord,
+    updateExperienceRecord,
+    deleteExperienceRecord
 }
