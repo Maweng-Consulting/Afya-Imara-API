@@ -13,8 +13,6 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // Database Configuration
 const { connect_database } = require("./db/connect_db");
 connect_database();
@@ -22,7 +20,6 @@ connect_database();
 app.get("/", (req, res) => {
     res.send({ message: "Server is up and running" }).status(200);
 });
-
 
 // Custom Routes
 const authRoutes = require("./routes/auth");

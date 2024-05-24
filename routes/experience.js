@@ -16,7 +16,7 @@ const router = express.Router()
 
 router.get("/", getAllWorkExperiences);
 router.get("/:id", IDValidationSchema, getDoctorExperienceRecord);
-router.get("/doctor-experiences", getDoctorExperiences);
+router.get("/doctor-experiences/:id", getDoctorExperiences);
 router.post("/", WorkExperienceValidationSchema, createExperienceRecord);
 router.put("/:id", updateExperienceRecord);
 router.delete("/:id", deleteExperienceRecord);

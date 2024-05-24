@@ -12,8 +12,8 @@ const getDoctorExperiences = async(req, res) => {
     if(!errors.isEmpty()) {
         return res.status(400).send({ errors: errors.array() })
     }
-
-    const experiences = Experience.find({ "doctor": id })
+    const { id } = req.params
+    const experiences = await Experience.find({ "doctor": id })
     res.send({ count: experiences.length, records: experiences });
 }
 
@@ -84,7 +84,7 @@ const deleteExperienceRecord = async(req, res) => {
     if(!errors.isEmpty()) {
         return res.status(400).send({ errors: errors.array() })
     }
-
+    const { id } = req.params
     try {
         const experience = await Experience.findByIdAndDelete({ "_id": id })
         if(!experience) return res.status(404).send({ error: `Experience record with id: ${id} not found!!` })
